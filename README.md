@@ -27,9 +27,7 @@ The parameters of this script are the following:
 
 | Parameter    | Default | Description                      |
 | ------------ | ------- | -------------------------------- |
-| `-path`      |         | Base path to datasets            |
-| `-db`        |         | Database name ['dibco','palm','phi','ein','sal','voy','bdi','all']    |
-| `-dbp`       |         | Database dependent parameters [dibco fold, palm gt]     |
+| `-path`      |         | Base path to datasets            | 
 | `--aug`      |         | Load augmentation folders        |
 | `-w`         |  256    | Input window size                |
 | `-s`         |  -1     | Step size. -1 to use window size |
@@ -46,10 +44,7 @@ The parameters of this script are the following:
 | `-b`         |  10     | Mini-batch size                  |
 | `-esmode`    |  p      | Early stopping mode: g='global', p='per page' |
 | `-espat`     |  10     | Early stopping patience          |
-| `-verbose`   |  1      | 1=show batch increment, other=mute |
-| `--test`     |         | Only run test (deactivate training) |
-| `--show`     |         | Show the output images           |
-| `-loadmodel` |         | Weights filename to load for test or for initialization  |
+| `-verbose`   |  1      | 1=show batch increment, other=mute | 
 
 
 The folders of each dataset must have a specific name (see table in section "Datasets" or consult the source code). Within each folder there must be two subfolders, one with the suffix `\_GR` with the images in gray scale, and another with the suffix `\_GT` for the ground truth.
@@ -60,7 +55,7 @@ For example, to train a network for the dataset, you have to run the following c
 
 
 ```
-$ python -u train.py -path datasets -db dibco -dbp 6 --aug -w 256 -s 128 -f 64 -k 5 -e 200 -b 10 -th -1 -stride 2 -page 64
+$ python -u train.py -dbp 6 --aug -w 256 -s 128 -f 64 -k 5 -e 200 -b 10 -th -1 -stride 2 -page 64
 ```
 
 
